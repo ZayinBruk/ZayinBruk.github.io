@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Zayin's website</title>
+        <style>
+        body {
+            background: rgb(40,40, 40);
+            color: rgb(45, 45, 45);
+            padding: 10px;
+            font-family: monospace;
+        }
+        #all-contents {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        /* navigation menu */
+        nav {
+            background: darkviolet;
+            margin: 0 auto;
+            margin-bottom: 20px;
+            display: flex;
+            padding: 10px;
+        }
+        h1 {
+            display: flex;
+            align-items: center;
+            color: rgb(0, 0, 0);
+            flex: 1;
+            margin: 0;
+        }
+        #nav-ul {
+            list-style-image: none;
+        }
+        .nav-li {
+            display: inline-block;
+            padding: 0 10px;
+        }
+        #nav-ul li{
+                background: black;
+                padding: 5px;
+                border-radius: 5px;
+                margin-bottom: 10px;
+            }
+            #nav-ul li:hover {
+                background-color: grey
+            }
+        a {
+            text-decoration: none;
+            color: rgb(231, 231, 231);
+        }
+
+        /* main container area beneath menu */
+        main {
+            background: darkviolet;
+            display: flex;
+        }
+        .sidebar {
+            margin-right: 25px;
+            padding: 10px;
+        }
+        .sidebar-img {
+            width: 200px;
+        }
+        .content {
+            flex: 1;
+            padding: 15px;
+        }
+        /* portfolio styles */
+        .content h1 {
+            color: black;
+        }
+        #interests {
+            border: 4px rgb(255, 255, 255) ridge;
+            padding: 8px;
+        }
+        h2, h3 {
+            margin: 0px;
+        }
+        #border1 {
+        border: 2px;
+        padding: 7px;
+        border-radius: 15px;
+        }
+
+        #border2 {
+        border: 2px;
+        padding: 7px;
+        border-radius: 50px 20px;
+        }
+        </style>
+    </head>
+
+    <body>
+        <div id="all-contents">
+            <!--Content All Here Goes-->
+            <nav id="border1">
+                <h1>Zayin's Awesome Website</h1>
+                <ul id="nav-ul">
+                    <li class="nav-li">
+                        <a href="index.html"> Home </a>
+                    </li>
+                    <li class="nav-li">
+                        <a href="portfolio.html"> Portfolio </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <main id="border2">
+                <!--Sidebar Section-->
+                <div class="sidebar">
+                    <img class="sidebar-img" src="data:image/jpeg;base64,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" >
+                </div>
+                <!--Content Section-->
+                <div class="content">
+                    <h2>Zayin Bruk</h2>
+                        <p>Student at Northshore Highschool</p>
+                        <!--Interests Section-->
+                        <div id="intrests">
+                            <h3>Interests</h3>
+                            <ul>
+                                <li>Cars</li>
+                                <li>Learning</li>
+                                <li>Coding</li>
+                            </ul>
+                        </div>
+                </div>
+            </main>
+        </div>
+    </body>
+</html>
