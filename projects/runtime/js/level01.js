@@ -27,7 +27,91 @@ var level01 = function (window) {
 
         // TODO 6 and on go here
         // BEGIN EDITING YOUR CODE HERE
+  function createSawBlade(x , y) {
+        var hitZoneSize = 25;
+        var damageFromObstacle = 10;
+        var sawBladeHitZone = game.createObstacle(hitZoneSize, damageFromObstacle);
+        sawBladeHitZone.x = x;
+        sawBladeHitZone.y = y;
+        game.addGameItem(sawBladeHitZone);
+        var obstacleImage = draw.bitmap('img/sawblade.png');
+        sawBladeHitZone.addChild(obstacleImage);
+        obstacleImage.x = -25;
+        obstacleImage.y = -25;
+        };
 
+        function createSpike(x , y) {
+        var hitZoneSize = 20;
+        var damageFromObstacle = 25;
+        var sawBladeHitZone = game.createObstacle(hitZoneSize, damageFromObstacle);
+        sawBladeHitZone.x = x;
+        sawBladeHitZone.y = y;
+        game.addGameItem(sawBladeHitZone);
+        var obstacleImage = draw.bitmap('img/spike.png');
+        sawBladeHitZone.addChild(obstacleImage);
+        obstacleImage.x = -20;
+        obstacleImage.y = -20;
+        obstacleImage.scaleX = .05;
+        obstacleImage.scaleY = .05; 
+    };
+
+        function createEnemy(x , y) {
+        var enemy = game.createGameItem('enemy',25);
+        var redCircle = draw.circle(20, 'red');
+        redCircle.x = -25;
+        redCircle.y = -25;
+        enemy.addChild(redCircle);
+        enemy.x = x;
+        enemy.y = y;
+        game.addGameItem(enemy);
+        enemy.velocityX = -1;
+        enemy.rotationVelocity = 10;
+   
+        enemy.onPlayerCollision = function() {
+        console.log('The enemy has hit Halle');
+        game.changeIntegrity(-10);
+        enemy.fadeOut();
+        };
+        
+        enemy.onProjectileCollision = function() {
+        console.log('Halle has hit the enemy');
+        game.increaseScore(10);
+        enemy.shrink();
+        };
+        
+    };
+        
+        function createReward(x , y) {
+        var reward = game.createGameItem('reward',25);
+        var bluCircle = draw.circle(20,'blue');
+        bluCircle.x = -25;
+        bluCircle.y = -25;
+        reward.addChild(bluCircle);
+        reward.x = x;
+        reward.y = y;
+        game.addGameItem(reward);
+        reward.velocityX = -1;
+        reward.rotationVelocity = 10;
+        
+        reward.onPlayerCollision = function() {
+            console.log('Halle has collected a reward')
+            game.increaseScore(25);
+            game.changeIntegrity(15);
+            reward.fadeOut();
+        };
+
+    };
+
+        
+        /*createEnemy(400,groundY-10);
+        createEnemy(800,groundY-20);
+        createEnemy(200,groundY-50);
+        createSpike(500, 100);
+        createSawBlade(200, 100);
+        createSawBlade(400, 250);
+        createSawBlade(600, 100);
+        createSawBlade(800, 250);
+        createReward(500, 200); */
         
         
         
